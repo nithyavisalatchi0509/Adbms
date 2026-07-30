@@ -1,0 +1,23 @@
+use student
+
+Create Table Studentee(
+Name varchar(20),
+Dep varchar(67),
+mark int,
+phone_no int,
+age int
+);
+
+insert into Studentee values("divya","cs",399,1234567892,28);
+insert into Studentee values("priya","it",477,997482442,20);
+insert into Studentee values("keerthana","cdf",499,82700247,19);
+insert into Studentee values("anu","cnd",560,834424472,20);
+insert into Studentee values("guru","history",840,34567843,23);
+																																																														
+Select * from Studentee;
+set SQL_SAFE_UPDATES = 0;
+update Studentee set Age = 28 where Name = "divya";
+
+alter table Studentee add (city varchar(27));
+delete from Studentee where Name = "Raji";
+select*from Studentee where Age > 20;
