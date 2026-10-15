@@ -1,0 +1,13 @@
+Create table student(sidnumber(10),snamevarchar(20), classvarchar(20),Addressvarchar(10));
+insert into student values(001,'AbdulNasar','111-BCA','villupuram');
+insert into student values(002,'Amirthavalli','111-BCA','chennai'); 
+insert into student values(003,'Antonyrajan','111-BCA','puducherry'); 
+insert into student values(004,'Arangalingam','111-BCA','karaikal'); 
+insert into student values(005,'Aravindh','111-BCA','coimbatore');
+SELECT * FROM student;
+alter tables tudent add phno number(10);
+Select * from student;
+alter table student drop column class;
+Rename table student to student1;
+TRUNCATE table student1;
+DROP table student1;
