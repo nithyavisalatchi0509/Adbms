@@ -1,0 +1,56 @@
+CREATE TABLE Member1 ( CustomerID INT PRIMARY KEY,  FirstName VARCHAR2(50), LastName VARCHAR2(50),Email VARCHAR2(100),Phone VARCHAR2(15));
+
+INSERT INTO Member1
+VALUES (22, 'Olivia', 'Taylor', 'olivia.t@email.com', '111-222-3334');
+
+INSERT INTO Member1
+VALUES (23, 'Daniel', 'Wilson', 'daniel.w@email.com', '444-555-6667');
+
+INSERT INTO Member1
+VALUES (24, 'Sophie', 'Brown', 'sophie.b@email.com', '777-888-9998');
+
+SELECT * FROM Member1;
+
+CREATE TABLE Books (
+    BookID INT PRIMARY KEY,
+    Title VARCHAR2(100),
+    Author VARCHAR2(100),
+    AvailableCopies INT
+);
+
+INSERT INTO Books
+VALUES (101, 'The Great Gatsby', 'F. Scott Fitzgerald', 3);
+
+INSERT INTO Books
+VALUES (102, 'To Kill a Mockingbird', 'Harper Lee', 2);
+
+INSERT INTO Books
+VALUES (103, '1984', 'George Orwell', 5);
+
+SELECT * FROM Books;
+
+CREATE TABLE Borrowings (
+    BorrowingID INT PRIMARY KEY,
+    CustomerID INT,
+    BookID INT,
+    BorrowDate DATE,
+    ReturnDate DATE,
+    FOREIGN KEY (CustomerID) REFERENCES Member1(CustomerID),
+    FOREIGN KEY (BookID) REFERENCES Books(BookID)
+);
+
+INSERT INTO Borrowings
+VALUES (
+    3, 22, 101,
+    TO_DATE('2024-01-12', 'YYYY-MM-DD'),
+    TO_DATE('2024-01-25', 'YYYY-MM-DD')
+);
+
+INSERT INTO Borrowings
+VALUES (
+    4, 23, 102,
+    TO_DATE('2024-01-15', 'YYYY-MM-DD'),
+    TO_DATE('2024-01-28', 'YYYY-MM-DD')
+);
+
+SELECT * FROM Borrowings;
